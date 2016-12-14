@@ -29,7 +29,7 @@ gettext.install(__appname__)
 # Global variables
 #-----------------------------------------------------------------------------
 
-_FOR_UBUNTU = "trusty"
+_FOR_UBUNTU = "xenial"
 _DEBUG = 1
 _LOG_FILE = "/tmp/%s.log" % __appname__
 _CONF_FILE = "https://raw.github.com/nxion/upi/master/ubuntu-16.04-i3-postinstall.cfg"
@@ -321,12 +321,12 @@ def main(argv):
         # Xresources
         if (config.has_option("dotfiles", "xres")):
             showexec(_("Downloading the Xresources file"), _WGET+"-O $HOME/.Xresources"+config.get("dotfiles", "xres"))
-            showexec(_("Installing the Xresources file"), "chow -R $USERNAME:$USERNAME $HOME/.Xresources")
+            showexec(_("Installing the Xresources file"), "chown -R $USERNAME:$USERNAME $HOME/.Xresources")
 
         # xinitrc
         if (config.has_option("dotfiles", "xinit")):
             showexec(_("Downloading the xinitrc file"), _WGET+"-O $HOME/.xinitrc"+config.get("dotfiles", "xres"))
-            showexec(_("Installing the xinitrc file"), "chow -R $USERNAME:$USERNAME $HOME/.xinitrc")
+            showexec(_("Installing the xinitrc file"), "chown -R $USERNAME:$USERNAME $HOME/.xinitrc")
 
     # Parse and exec post-actions
     for action_name, action_cmd in config.items("postactions"):
