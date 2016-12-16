@@ -43,7 +43,7 @@ _APT_REMOVE = "DEBIAN_FRONTEND=noninteractive apt -y -f remove"
 _APT_UPDATE = "DEBIAN_FRONTEND=noninteractive apt -y update"
 _APT_UPGRADE = "DEBIAN_FRONTEND=noninteractive apt -y upgrade"
 _APT_KEY = "apt-key adv --keyserver keyserver.ubuntu.com --recv-keys"
-_WGET = "wget"
+_WGET = "/usr/bin/wget"
 
 # Classes
 #-----------------------------------------------------------------------------
