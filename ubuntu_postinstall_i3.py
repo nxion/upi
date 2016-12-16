@@ -301,14 +301,14 @@ def main(argv):
     # Download and install dotfiles: vimrc, prompt...
     if (config.has_section("dotfiles")):
         # Create the bashrc.d subfolder
-        showexec (_("Create the ~/.bashrc.d subfolder"), "mkdir -p $HOME/.bashrc.d")
-        if (config.has_option("dotfiles", "bashrc")):
-            showexec (_("Download bash main configuration file"), _WGET+" -O $HOME/.bashrc "+config.get("dotfiles", "bashrc"))
-        if (config.has_option("dotfiles", "bashrc_prompt")):
-            showexec (_("Download bash prompt configuration file"), _WGET+" -O $HOME/.bashrc.d/bashrc_prompt "+config.get("dotfiles", "bashrc_prompt"))
-        if (config.has_option("dotfiles", "bashrc_aliases")):
-            showexec (_("Download bash aliases configuration file"), _WGET+" -O $HOME/.bashrc.d/bashrc_aliases "+config.get("dotfiles", "bashrc_aliases"))
-        showexec (_("Install the bash configuration file"), "chown -R $me:$me $HOME/.bashrc*")
+        #showexec (_("Create the ~/.bashrc.d subfolder"), "mkdir -p $HOME/.bashrc.d")
+        #if (config.has_option("dotfiles", "bashrc")):
+        #    showexec (_("Download bash main configuration file"), _WGET+" -O $HOME/.bashrc "+config.get("dotfiles", "bashrc"))
+        #if (config.has_option("dotfiles", "bashrc_prompt")):
+        #    showexec (_("Download bash prompt configuration file"), _WGET+" -O $HOME/.bashrc.d/bashrc_prompt "+config.get("dotfiles", "bashrc_prompt"))
+        #if (config.has_option("dotfiles", "bashrc_aliases")):
+        #    showexec (_("Download bash aliases configuration file"), _WGET+" -O $HOME/.bashrc.d/bashrc_aliases "+config.get("dotfiles", "bashrc_aliases"))
+        #showexec (_("Install the bash configuration file"), "chown -R $me:$me $HOME/.bashrc*")
         # Vim
         if (config.has_option("dotfiles", "vimrc")):
             showexec (_("Donwload the Vim configuration file"), _WGET+" -O $HOME/.vimrc "+config.get("dotfiles", "vimrc"))
