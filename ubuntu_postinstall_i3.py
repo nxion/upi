@@ -307,26 +307,26 @@ def main(argv):
             showexec (_("Download bash prompt configuration file"), _WGET+" -O $HOME/.bashrc.d/bashrc_prompt "+config.get("dotfiles", "bashrc_prompt"))
         if (config.has_option("dotfiles", "bashrc_aliases")):
             showexec (_("Download bash aliases configuration file"), _WGET+" -O $HOME/.bashrc.d/bashrc_aliases "+config.get("dotfiles", "bashrc_aliases"))
-        showexec (_("Install the bash configuration file"), "chown -R $USERNAME:$USERNAME $HOME/.bashrc*")
+        showexec (_("Install the bash configuration file"), "chown -R $me:$me $HOME/.bashrc*")
         # Vim
         if (config.has_option("dotfiles", "vimrc")):
             showexec (_("Donwload the Vim configuration file"), _WGET+" -O $HOME/.vimrc "+config.get("dotfiles", "vimrc"))
-            showexec (_("Install the Vim configuration file"), "chown -R $USERNAME:$USERNAME $HOME/.vimrc")
+            showexec (_("Install the Vim configuration file"), "chown -R $me:$me $HOME/.vimrc")
 
         # Htop
         if (config.has_option("dotfiles", "htoprc")):
             showexec (_("Download the Htop configuration file"), _WGET+" -O $HOME/.htoprc "+config.get("dotfiles", "htoprc"))
-            showexec (_("Install the Htop configuration file"), "chown -R $USERNAME:$USERNAME $HOME/.htoprc")
+            showexec (_("Install the Htop configuration file"), "chown -R $me:$me $HOME/.htoprc")
 
         # Xresources
         if (config.has_option("dotfiles", "xres")):
-            showexec(_("Downloading the Xresources file"), _WGET+"-O $HOME/.Xresources"+config.get("dotfiles", "xres"))
-            showexec(_("Installing the Xresources file"), "chown -R $USERNAME:$USERNAME $HOME/.Xresources")
+            showexec(_("Downloading the Xresources file"), _WGET+"-O $HOME/.Xresources "+config.get("dotfiles", "xres"))
+            showexec(_("Installing the Xresources file"), "chown -R $me:$me $HOME/.Xresources")
 
         # xinitrc
         if (config.has_option("dotfiles", "xinit")):
-            showexec(_("Downloading the xinitrc file"), _WGET+"-O $HOME/.xinitrc"+config.get("dotfiles", "xres"))
-            showexec(_("Installing the xinitrc file"), "chown -R $USERNAME:$USERNAME $HOME/.xinitrc")
+            showexec(_("Downloading the xinitrc file"), _WGET+"-O $HOME/.xinitrc "+config.get("dotfiles", "xres"))
+            showexec(_("Installing the xinitrc file"), "chown -R $me:$me $HOME/.xinitrc")
 
     # Parse and exec post-actions
     for action_name, action_cmd in config.items("postactions"):
