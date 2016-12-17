@@ -324,12 +324,17 @@ def main(argv):
         # Xresources
         if (config.has_option("dotfiles", "xres")):
             showexec(_("Downloading the Xresources file"), _WGET+"-O $HOME/.Xresources "+config.get("dotfiles", "xres"))
-            showexec(_("Installing the Xresources file"), "chown -R $me:$me $HOME/.Xresources")
+            showexec(_("Installing the Xresources file"), "chown -R me:me $HOME/.Xresources")
 
         # xinitrc
         if (config.has_option("dotfiles", "xinit")):
             showexec(_("Downloading the xinitrc file"), _WGET+"-O $HOME/.xinitrc "+config.get("dotfiles", "xres"))
-            showexec(_("Installing the xinitrc file"), "chown -R $me:$me $HOME/.xinitrc")
+            showexec(_("Installing the xinitrc file"), "chown -R me:me $HOME/.xinitrc")
+            
+        # xorg
+        if (config.has_option("dotfiles", "xorg")):
+            showexec(_("Downloading the xinitrc file"), _WGET+"-O /etc/X11/xorg.conf "+config.get("dotfiles", "xorg"))
+            showexec(_("Installing the xinitrc file"), "chown -R root:root $HOME/.xinitrc")
 
     # Parse and exec post-actions
     for action_name, action_cmd in config.items("postactions"):
