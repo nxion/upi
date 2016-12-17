@@ -163,8 +163,8 @@ def showexec(description, command, exitonerror = 0, presskey = 0, waitmessage = 
         raw_input()
 
     # Run the command
-    # returncode = os.system ("/bin/sh -c \"%s\" >> /dev/null 2>&1" % command)
-    returncode = os.system ("\"%s\" >> /dev/null 2>&1" % command)
+    returncode = os.system ("/bin/sh -c \"%s\" >> /dev/null 2>&1" % command)
+    # returncode = os.system ("\"%s\" >> /dev/null 2>&1" % command)
     # test switching os.system for subprocess
     # returncode = subprocess.call ("/bin/sh" +  "-c \"%s\" >> /dev/null 2>&1" % command, shell=True)
 
