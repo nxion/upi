@@ -167,7 +167,7 @@ def showexec(description, command, exitonerror = 0, presskey = 0, waitmessage = 
     returncode = os.system ("\"%s\" >> /dev/null 2>&1" % command)
     # test switching os.system for subprocess
     # returncode = subprocess.call ("/bin/sh" +  "-c \"%s\" >> /dev/null 2>&1" % command, shell=True)
-    
+
     # Display the result
     if ((returncode == 0) or (returncode == 25600)):
         status = "[  OK   ]"
@@ -312,14 +312,14 @@ def main(argv):
         #    showexec (_("Download bash aliases configuration file"), _WGET+" -O $HOME/.bashrc.d/bashrc_aliases "+config.get("dotfiles", "bashrc_aliases"))
         #showexec (_("Install the bash configuration file"), "chown -R $me:$me $HOME/.bashrc*")
         # Vim
-        if (config.has_option("dotfiles", "vimrc")):
-            showexec (_("Donwload the Vim configuration file"), _WGET+" -O $HOME/.vimrc "+config.get("dotfiles", "vimrc"))
-            showexec (_("Install the Vim configuration file"), "chown -R $me:$me $HOME/.vimrc")
+        #if (config.has_option("dotfiles", "vimrc")):
+         #   showexec (_("Donwload the Vim configuration file"), _WGET+" -O $HOME/.vimrc "+config.get("dotfiles", "vimrc"))
+          #  showexec (_("Install the Vim configuration file"), "chown -R $me:$me $HOME/.vimrc")
 
         # Htop
-        if (config.has_option("dotfiles", "htoprc")):
-            showexec (_("Download the Htop configuration file"), _WGET+" -O $HOME/.htoprc "+config.get("dotfiles", "htoprc"))
-            showexec (_("Install the Htop configuration file"), "chown -R $me:$me $HOME/.htoprc")
+        #if (config.has_option("dotfiles", "htoprc")):
+         #   showexec (_("Download the Htop configuration file"), _WGET+" -O $HOME/.htoprc "+config.get("dotfiles", "htoprc"))
+          #  showexec (_("Install the Htop configuration file"), "chown -R $me:$me $HOME/.htoprc")
 
         # Xresources
         if (config.has_option("dotfiles", "xres")):
