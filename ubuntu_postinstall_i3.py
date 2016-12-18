@@ -301,7 +301,7 @@ def main(argv):
     # showexec (_("DVDs CSS encryption reader"), "sh /usr/share/doc/libdvdread4/install-css.sh")
 
     # Download and install dotfiles: vimrc, prompt...
-    if (config.has_section("dotfiles")):
+   # if (config.has_section("dotfiles")):
         # Create the bashrc.d subfolder
         #showexec (_("Create the ~/.bashrc.d subfolder"), "mkdir -p $HOME/.bashrc.d")
         #if (config.has_option("dotfiles", "bashrc")):
