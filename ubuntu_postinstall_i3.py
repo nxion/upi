@@ -292,6 +292,12 @@ def main(argv):
         else:
             showexec (_("Install packages ")+pkg_type, _APT_INSTALL+" "+pkg_list)
 
+   
+    '''
+    I needed to comment out all the dotfiles peices because of issues with os.system. You can
+    look at the issues section to see why it is an issue. os.system is outdated and should be 
+    replaced with subprocess. I will work on that, until then this script now works.
+    '''
     # # Install packages related to repositories
     # #~ print pkg_list_others
     # for pkg in pkg_list_others.keys():
