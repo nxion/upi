@@ -1,0 +1,4 @@
+language: python
+python:
+   - 2.7
+script: pytest ubuntu_postinstall_i3.py
